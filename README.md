@@ -28,21 +28,21 @@ Response:
 
 Dependencies / build management is done with gradle. To build the self-contained `jar` artifact all you need to do is:
 ```
-gradle bootJar
+./gradlew bootJar
 ```
 The build output can then be found at `build/libs`.
 
 To run the app locally execute
 
 ```
-gradle bootRun
+./gradlew bootRun
 ```
 if not specified otherwise the embedded tomcat server will listen on port `8081`. Changing the default behaviour can either be done by specifing a new port in `application.yml` or setting an environment variable called `PORT`.
 
 The only endpoint the application exposes can then be consumend via curl like so:
 
 ```
-curl /api/details/1
+curl http://localhost:8081/details/1
 ```
 
 Regardless of what you send as an id (`details/{producId}`) you will always get the same result.
